@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business1.Api\Business1.Api.csproj" />
+    <ProjectReference Include="..\WebTemplate.Nuget\WebTemplate.Nuget.csproj" />
+  </ItemGroup>
+
+</Project>
