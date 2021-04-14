@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Business1.Api\Business1.Api.csproj" />
+    <ProjectReference Include="..\WebTemplate.Common\WebTemplate.Common.csproj" />
     <ProjectReference Include="..\WebTemplate.Nuget\WebTemplate.Nuget.csproj" />
   </ItemGroup>
 

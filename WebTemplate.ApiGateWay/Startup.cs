@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebTemplate.Root
+namespace WebTemplate.ApiGateWay
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace WebTemplate.Root
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebTemplate.Root", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebTemplate.ApiGateWay", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace WebTemplate.Root
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebTemplate.Root v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebTemplate.ApiGateWay v1"));
             }
 
             app.UseHttpsRedirection();
