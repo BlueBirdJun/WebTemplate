@@ -1,3 +1,17 @@
 ﻿
 
 Nuget
+
+
+Mediator
+AppMetic
+
+Mediator
+Entity Framework
+AutoMapper
+Polly
+Jwt
+AppMetric
+Versionning
+
+ocelot
