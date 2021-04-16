@@ -21,5 +21,6 @@ APP-METRICS
 APP Metrics는 요청속도 시간 경과에 따른 사용자 로그인 수 계산 데이터 베이스 쿼리 실행 시간 측정 사용 가능한 메모리 양 측정등과 같은 메트릭 
 유형을 제공한다. 
 
+Cors 적용
 
 Cross-origin Resource Sharing Cors

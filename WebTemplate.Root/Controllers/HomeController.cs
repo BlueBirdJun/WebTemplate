@@ -29,8 +29,8 @@ namespace WebTemplate.Root.Controllers
         [HttpGet]
         [Authorize]
         public string Get()
-        {   
-            var token = Request.Headers["Authorization"].ToString().Replace("bearer", "");
+        {
+            var token = Request.Headers["Authorization"].ToString().Replace("bearer", "").Trim();
             var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
             var handler = new JwtSecurityTokenHandler();
             var validations = new TokenValidationParameters
@@ -41,10 +41,12 @@ namespace WebTemplate.Root.Controllers
                 ValidateAudience = false
             };
             var claims = handler.ValidateToken(token, validations, out var tokenSecure);
-            var ccc= claims.Claims.ToList();
-            var ggg= ccc.Where(p => p.Type == "userid").SingleOrDefault();
+            var ccc = claims.Claims.ToList();
+            var ggg = ccc.Where(p => p.Type == "userid").SingleOrDefault();
 
             return ggg.Value;
+            return "빵터졌어";
+            
         }
     }
 }

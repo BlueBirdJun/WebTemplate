@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System;
@@ -26,7 +27,7 @@ namespace WebTemplate.Root
     public class Startup
     {
         public IConfiguration Configuration { get; }
-        
+        private readonly string MyPolicy = "policy";
         private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _environment;
         public Startup(IConfiguration configuration, Microsoft.AspNetCore.Hosting.IHostingEnvironment environment)
         {
@@ -53,6 +54,23 @@ namespace WebTemplate.Root
                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                };
            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyPolicy,
+                    builder =>
+                    {
+                        builder.WithOrigins("http://example.com",
+                                            "http://www.contoso.com",
+                                            "https://cors1.azurewebsites.net",
+                                            "https://cors3.azurewebsites.net",
+                                            "https://localhost:44398",
+                                            "https://localhost:5001")
+                               .WithHeaders(HeaderNames.ContentType, "x-custom-header")
+                               .WithMethods("PUT", "DELETE", "GET", "OPTIONS");
+                    });
+            });
+
 
             services.AddControllers(options =>
             {
@@ -90,6 +108,7 @@ namespace WebTemplate.Root
             //app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseCors(MyPolicy);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
