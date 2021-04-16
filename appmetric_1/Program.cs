@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Business1.Api
+namespace appmetric_1
 {
     public class Program
     {

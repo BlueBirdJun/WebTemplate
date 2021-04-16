@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.5" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Business1.Api\Business1.Api.csproj" />
     <ProjectReference Include="..\WebTemplate.Common\WebTemplate.Common.csproj" />
     <ProjectReference Include="..\WebTemplate.Nuget\WebTemplate.Nuget.csproj" />

@@ -1,6 +1,6 @@
 using System;
 
-namespace WebTemplate.ApiGateWay
+namespace appmetric_1
 {
     public class WeatherForecast
     {

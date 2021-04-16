@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebTemplate.Common\WebTemplate.Common.csproj" />
+    <ProjectReference Include="..\WebTemplate.Domain\WebTemplate.Domain.csproj" />
+    <ProjectReference Include="..\WebTemplate.Nuget\WebTemplate.Nuget.csproj" />
+    <ProjectReference Include="..\WebTemplate.Persistance\WebTemplate.Persistance.csproj" />
+  </ItemGroup>
+
 </Project>

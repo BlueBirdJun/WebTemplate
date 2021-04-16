@@ -2,7 +2,7 @@
 
 namespace WebTemplate.Common
 {
-    public class Class1
+    public class BootStrap
     {
     }
 }
