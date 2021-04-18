@@ -27,6 +27,7 @@ namespace appmetric_1
         {
 
             services.AddControllers();
+            services.AddMvcCore().AddMetricsCore();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "appmetric_1", Version = "v1" });

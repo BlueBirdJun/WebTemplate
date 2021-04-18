@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="App.Metrics.AspNetCore.Mvc" Version="4.2.0" />
+    <PackageReference Include="App.Metrics.Reporting.Console" Version="4.2.0" />
+    <PackageReference Include="App.Metrics.Reporting.TextFile" Version="4.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.2" />
   </ItemGroup>
 
